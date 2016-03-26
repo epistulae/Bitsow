@@ -9,6 +9,21 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>BitsowActionExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>BitsowShareEx.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>BitsowShareExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +33,21 @@
 			<true/>
 		</dict>
 		<key>DC8E3FBE1CA1BCC90023A21B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC8E3FDB1CA69F370023A21B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC8E3FF21CA6B1880023A21B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC8E40061CA6B6FD0023A21B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

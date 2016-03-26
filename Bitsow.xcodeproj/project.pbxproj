@@ -17,6 +17,9 @@
 		DC8E3FD31CA400630023A21B /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC8E3FD21CA400620023A21B /* Key.plist */; };
 		DC8E3FD51CA5D4EF0023A21B /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E3FD41CA5D4EF0023A21B /* ArticleTableViewCell.swift */; };
 		DC8E3FD71CA5DC8C0023A21B /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E3FD61CA5DC8C0023A21B /* ArticleTableViewController.swift */; };
+		DC8E400A1CA6B6FD0023A21B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E40091CA6B6FD0023A21B /* ShareViewController.swift */; };
+		DC8E400D1CA6B6FD0023A21B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC8E400B1CA6B6FD0023A21B /* MainInterface.storyboard */; };
+		DC8E40111CA6B6FD0023A21B /* BitsowShareEx.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DC8E40071CA6B6FD0023A21B /* BitsowShareEx.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +30,28 @@
 			remoteGlobalIDString = DC8E3FAA1CA1BCC90023A21B;
 			remoteInfo = Bitsow;
 		};
+		DC8E400F1CA6B6FD0023A21B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC8E3FA31CA1BCC90023A21B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC8E40061CA6B6FD0023A21B;
+			remoteInfo = BitsowShareEx;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DC8E3FEA1CA69F370023A21B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DC8E40111CA6B6FD0023A21B /* BitsowShareEx.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DC8E3FAB1CA1BCC90023A21B /* Bitsow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bitsow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +68,12 @@
 		DC8E3FD21CA400620023A21B /* Key.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
 		DC8E3FD41CA5D4EF0023A21B /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		DC8E3FD61CA5DC8C0023A21B /* ArticleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
+		DC8E3FEB1CA69F6E0023A21B /* Bitsow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Bitsow.entitlements; sourceTree = "<group>"; };
+		DC8E40071CA6B6FD0023A21B /* BitsowShareEx.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BitsowShareEx.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC8E40091CA6B6FD0023A21B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		DC8E400C1CA6B6FD0023A21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		DC8E400E1CA6B6FD0023A21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC8E40151CA6B7050023A21B /* BitsowShareEx.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BitsowShareEx.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +91,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC8E40041CA6B6FD0023A21B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -69,6 +106,7 @@
 			children = (
 				DC8E3FAD1CA1BCC90023A21B /* Bitsow */,
 				DC8E3FC21CA1BCC90023A21B /* BitsowTests */,
+				DC8E40081CA6B6FD0023A21B /* BitsowShareEx */,
 				DC8E3FAC1CA1BCC90023A21B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +116,7 @@
 			children = (
 				DC8E3FAB1CA1BCC90023A21B /* Bitsow.app */,
 				DC8E3FBF1CA1BCC90023A21B /* BitsowTests.xctest */,
+				DC8E40071CA6B6FD0023A21B /* BitsowShareEx.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +124,7 @@
 		DC8E3FAD1CA1BCC90023A21B /* Bitsow */ = {
 			isa = PBXGroup;
 			children = (
+				DC8E3FEB1CA69F6E0023A21B /* Bitsow.entitlements */,
 				DC8E3FCE1CA1C44D0023A21B /* Article.swift */,
 				DC8E3FAE1CA1BCC90023A21B /* AppDelegate.swift */,
 				DC8E3FB01CA1BCC90023A21B /* ViewController.swift */,
@@ -108,6 +148,17 @@
 			path = BitsowTests;
 			sourceTree = "<group>";
 		};
+		DC8E40081CA6B6FD0023A21B /* BitsowShareEx */ = {
+			isa = PBXGroup;
+			children = (
+				DC8E40151CA6B7050023A21B /* BitsowShareEx.entitlements */,
+				DC8E40091CA6B6FD0023A21B /* ShareViewController.swift */,
+				DC8E400B1CA6B6FD0023A21B /* MainInterface.storyboard */,
+				DC8E400E1CA6B6FD0023A21B /* Info.plist */,
+			);
+			path = BitsowShareEx;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,10 +169,12 @@
 				DC8E3FA71CA1BCC90023A21B /* Sources */,
 				DC8E3FA81CA1BCC90023A21B /* Frameworks */,
 				DC8E3FA91CA1BCC90023A21B /* Resources */,
+				DC8E3FEA1CA69F370023A21B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DC8E40101CA6B6FD0023A21B /* PBXTargetDependency */,
 			);
 			name = Bitsow;
 			productName = Bitsow;
@@ -146,6 +199,23 @@
 			productReference = DC8E3FBF1CA1BCC90023A21B /* BitsowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DC8E40061CA6B6FD0023A21B /* BitsowShareEx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC8E40121CA6B6FD0023A21B /* Build configuration list for PBXNativeTarget "BitsowShareEx" */;
+			buildPhases = (
+				DC8E40031CA6B6FD0023A21B /* Sources */,
+				DC8E40041CA6B6FD0023A21B /* Frameworks */,
+				DC8E40051CA6B6FD0023A21B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BitsowShareEx;
+			productName = BitsowShareEx;
+			productReference = DC8E40071CA6B6FD0023A21B /* BitsowShareEx.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -159,11 +229,25 @@
 					DC8E3FAA1CA1BCC90023A21B = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 7LHHN54MAP;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					DC8E3FBE1CA1BCC90023A21B = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 7LHHN54MAP;
 						TestTargetID = DC8E3FAA1CA1BCC90023A21B;
+					};
+					DC8E40061CA6B6FD0023A21B = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 7LHHN54MAP;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -182,6 +266,7 @@
 			targets = (
 				DC8E3FAA1CA1BCC90023A21B /* Bitsow */,
 				DC8E3FBE1CA1BCC90023A21B /* BitsowTests */,
+				DC8E40061CA6B6FD0023A21B /* BitsowShareEx */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +287,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC8E40051CA6B6FD0023A21B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC8E400D1CA6B6FD0023A21B /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +321,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC8E40031CA6B6FD0023A21B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC8E400A1CA6B6FD0023A21B /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -235,6 +336,11 @@
 			isa = PBXTargetDependency;
 			target = DC8E3FAA1CA1BCC90023A21B /* Bitsow */;
 			targetProxy = DC8E3FC01CA1BCC90023A21B /* PBXContainerItemProxy */;
+		};
+		DC8E40101CA6B6FD0023A21B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC8E40061CA6B6FD0023A21B /* BitsowShareEx */;
+			targetProxy = DC8E400F1CA6B6FD0023A21B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -253,6 +359,14 @@
 				DC8E3FB81CA1BCC90023A21B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DC8E400B1CA6B6FD0023A21B /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC8E400C1CA6B6FD0023A21B /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -345,10 +459,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Bitsow/Bitsow.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Bitsow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = epistulae.Bitsow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -356,10 +475,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Bitsow/Bitsow.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Bitsow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = epistulae.Bitsow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -387,6 +511,36 @@
 			};
 			name = Release;
 		};
+		DC8E40131CA6B6FD0023A21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BitsowShareEx/BitsowShareEx.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = BitsowShareEx/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = epistulae.Bitsow.BitsowShareEx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DC8E40141CA6B6FD0023A21B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BitsowShareEx/BitsowShareEx.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = BitsowShareEx/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = epistulae.Bitsow.BitsowShareEx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -406,12 +560,22 @@
 				DC8E3FCA1CA1BCC90023A21B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC8E3FCB1CA1BCC90023A21B /* Build configuration list for PBXNativeTarget "BitsowTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC8E3FCC1CA1BCC90023A21B /* Debug */,
 				DC8E3FCD1CA1BCC90023A21B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC8E40121CA6B6FD0023A21B /* Build configuration list for PBXNativeTarget "BitsowShareEx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC8E40131CA6B6FD0023A21B /* Debug */,
+				DC8E40141CA6B6FD0023A21B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

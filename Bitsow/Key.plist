@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aylienApiKey</key>
+	<string>9f22d3b533a089ad9fd82643d17c873d</string>
+	<key>aylienAppID</key>
+	<string>01ac103f</string>
+	<key>alchemyApiKey</key>
+	<string>7e7f4dfc7f81b021dda1ccfd3d8381d3b4e987df</string>
+</dict>
+</plist>

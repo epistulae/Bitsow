@@ -19,8 +19,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var datePub: UILabel!
     @IBOutlet weak var artSummary: UILabel!
     
+    var articleURL: String!
+    let extensionName = "group.com.Bitsow.swift.shareExtension"
+    let key = "url"
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let saved = NSUserDefaults(suiteName: extensionName) {
+            if let urlData = saved.objectForKey(key) as? NSURL {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.articleURL = urlData.absoluteString
+                })
+            }
+        }
+        print(articleURL)
         
         // API Call
         //getArticle()
