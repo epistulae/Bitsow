@@ -9,10 +9,13 @@
 import Foundation
 import UIKit
 
-class ArticleViewController: UIViewController, UINavigationControllerDelegate {
+class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
     
     
     // MARK: Properties
+    
+    @IBOutlet weak var enterURL: UITextField!
+    
     
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var artAuthor: UILabel!
@@ -26,26 +29,20 @@ class ArticleViewController: UIViewController, UINavigationControllerDelegate {
     let key = "url"
 
     var article: Article?
+    var originalURL: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        checkAlreadySaved()
+        // Handle user input with delegate callbacks
+        enterURL.delegate = self
         
-        // Self refer to url
-        
-        // Set up view if contains saved Article
-        if let article = article {
-            articleTitle.text  = article.title
-            artAuthor.text = article.author
-            datePub.text = article.date
-            altsum.text = article.summary
-        } else{
-            
-        // API Call for unsaved article
-        getArticle()
-            
+        // API Call once url is inputted
+        if originalURL != nil {
+            getArticle()
         }
+            
+        
         
         
         //        if let saved = NSUserDefaults(suiteName: extensionName){
@@ -66,18 +63,27 @@ class ArticleViewController: UIViewController, UINavigationControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func checkAlreadySaved(){
-        // If article is not yet saved, the button is enabled
-        let title = self.articleTitle.text ?? ""
-        saveArticle.enabled = !title.isEmpty
+//    func checkAlreadySaved(){
+//        // If article is not yet saved, the button is enabled
+//        let title = self.articleTitle.text ?? ""
+//        saveArticle.enabled = !title.isEmpty
+//    }
+    
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // Hide keyboard
+        textField.resignFirstResponder()
+        return true
+    }
+
+    func textFieldDidEndEditing(textField: UITextField) {
+        originalURL = enterURL.text
+        getArticle()
     }
     
+    
     // MARK: API Calls
-    var originalURL = "http://www.wsj.com/articles/pope-francis-celebrates-easter-sunday-mass-amid-tight-security-1459073447"
-    // will be share of action at some point
-    
-    
-    
     let endPoint: String = "https://api.aylien.com/api/v1"
     
     // Fix illegal URLs
