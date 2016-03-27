@@ -174,8 +174,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mgu-dt-j9w">
-                                <rect key="frame" x="20" y="70" width="560" height="94"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mgu-dt-j9w">
+                                <rect key="frame" x="20" y="70" width="560" height="118"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAVED Article Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKD-JR-AmZ">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="20"/>
@@ -195,8 +195,14 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTB-qz-LzM">
+                                        <rect key="frame" x="0.0" y="80" width="560" height="15"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="90" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EA-d9-Dw9">
-                                        <rect key="frame" x="0.0" y="80" width="560" height="14"/>
+                                        <rect key="frame" x="0.0" y="105" width="560" height="14"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -204,7 +210,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="1EA-d9-Dw9" firstAttribute="top" secondItem="7Qu-RX-cTS" secondAttribute="bottom" constant="10" id="Jan-8Z-7iD"/>
-                                    <constraint firstItem="1EA-d9-Dw9" firstAttribute="top" secondItem="7Qu-RX-cTS" secondAttribute="bottom" constant="10" id="vaP-nx-l7T"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -215,7 +220,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mgu-dt-j9w" firstAttribute="top" secondItem="rLp-QN-BuX" secondAttribute="bottom" constant="50" id="47W-QB-v51"/>
+                            <constraint firstItem="mgu-dt-j9w" firstAttribute="top" secondItem="rLp-QN-BuX" secondAttribute="bottom" constant="6" id="47W-QB-v51"/>
                             <constraint firstItem="mgu-dt-j9w" firstAttribute="leading" secondItem="km9-7Q-PPo" secondAttribute="leadingMargin" id="BVt-Lj-ZAZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mgu-dt-j9w" secondAttribute="trailing" id="oBW-Nw-4ZB"/>
                         </constraints>
@@ -227,6 +232,19 @@
                                 <action selector="returnButton:" destination="5Bf-oP-Cj2" id="pLv-xV-yfK"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="0PF-u4-Qgg">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="sOT-oN-J65">
+                                <rect key="frame" x="421" y="7" width="159" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Summary"/>
+                                    <segment title="Full Article"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchText:" destination="5Bf-oP-Cj2" eventType="valueChanged" id="YF6-rG-ljG"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -234,6 +252,8 @@
                         <outlet property="artAuthor" destination="KUG-af-ao3" id="mnV-lN-yRU"/>
                         <outlet property="articleTitle" destination="cKD-JR-AmZ" id="zdp-Uw-3Kc"/>
                         <outlet property="datePub" destination="7Qu-RX-cTS" id="7uI-HO-zuo"/>
+                        <outlet property="dispURL" destination="bTB-qz-LzM" id="lQf-sL-34j"/>
+                        <outlet property="sumSwitch" destination="sOT-oN-J65" id="XWA-HS-ati"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mg9-iB-6Kf" sceneMemberID="firstResponder"/>

@@ -27,9 +27,9 @@ class ArticleTableViewController: UITableViewController {
     }
     
     func loadSampleData(){
-        let article1 = Article(url: "URL1", title: "Title1", date: "2015-10-29", author: "A1Author", summary: "sum1A2\nsum2A2", text: "Blahblah Article 1")!
-        let article2 = Article(url: "URL2", title: "Title2", date: "2015-10-29", author: "A2Author", summary: "sum1A2\nsum2A2", text: "Blahblah Article 2")!
-        let article3 = Article(url: "URL3", title: "Title3", date: "2015-10-29", author: "A3Author", summary: "sum1A2\nsum2A2", text: "Blahblah Article 3")!
+        let article1 = Article(url: "http://www.wsj.com/articles/pope-francis-celebrates-easter-sunday-mass-amid-tight-security-1459073447", title: "Title1", date: "2015-10-29", author: "A1Author", summary: "sum1A2\nsum2A2", text: "Blahblah Article 1")!
+        let article2 = Article(url: "http://www.cnn.com/2016/03/27/asia/pakistan-lahore-deadly-blast/index.html", title: "Title2", date: "2015-10-29", author: "A2Author", summary: "sum1A2\nsum2A2", text: "Blahblah Article 2")!
+        let article3 = Article(url: "http://www.nbcnews.com/health/health-news/de-niro-s-tribeca-festival-yanks-anti-vaccination-film-n546161", title: "Title3", date: "2015-10-29", author: "A3Author", summary: "sum1A2\nsum2A2", text: "Blahblah Article 3")!
         
         articles += [article1, article2, article3]
     }

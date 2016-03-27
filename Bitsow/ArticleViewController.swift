@@ -73,7 +73,7 @@ class ArticleViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     // MARK: API Calls
-    var originalURL = "http://www.cnn.com/2016/03/24/politics/isis-plots-europe-planned-brussels-cell/index.html"
+    var originalURL = "http://www.wsj.com/articles/pope-francis-celebrates-easter-sunday-mass-amid-tight-security-1459073447"
     // will be share of action at some point
     
     

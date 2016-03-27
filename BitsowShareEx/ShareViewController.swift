@@ -13,6 +13,7 @@ import MobileCoreServices
 
 class ShareViewController: SLComposeServiceViewController {
 
+    
     let extensionName = "group.com.bitsow"
     let key = "url"
     
@@ -28,7 +29,7 @@ class ShareViewController: SLComposeServiceViewController {
         self.extensionContext!.completeRequestReturningItems([], completionHandler: nil)
         
         
-        
+
         
         // check if extension is valid
         if let content = extensionContext!.inputItems[0] as? NSExtensionItem {
