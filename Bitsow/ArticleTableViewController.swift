@@ -27,9 +27,9 @@ class ArticleTableViewController: UITableViewController {
     }
     
     func loadSampleData(){
-        let article1 = Article(url: "URL1", title: "Title1", date: "2015-10-29", author: "A1Author", summary: ["sum1A1", "sum2A1"], text: "Blahblah Article 1")!
-        let article2 = Article(url: "URL2", title: "Title2", date: "2015-10-29", author: "A2Author", summary: ["sum1A2", "sum2A2"], text: "Blahblah Article 2")!
-        let article3 = Article(url: "URL3", title: "Title3", date: "2015-10-29", author: "A3Author", summary: ["sum1A3", "sum2A3"], text: "Blahblah Article 3")!
+        let article1 = Article(url: "URL1", title: "Title1", date: "2015-10-29", author: "A1Author", summary: "sum1A2\nsum2A2", text: "Blahblah Article 1")!
+        let article2 = Article(url: "URL2", title: "Title2", date: "2015-10-29", author: "A2Author", summary: "sum1A2\nsum2A2", text: "Blahblah Article 2")!
+        let article3 = Article(url: "URL3", title: "Title3", date: "2015-10-29", author: "A3Author", summary: "sum1A2\nsum2A2", text: "Blahblah Article 3")!
         
         articles += [article1, article2, article3]
     }
@@ -96,14 +96,50 @@ class ArticleTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        if segue.identifier == "showSaved" {
+            let nav = segue.destinationViewController as! UINavigationController
+            let articleDetailViewController = nav.topViewController as! SavedArticleViewController
+            
+            // Get article that generated segue.
+            if let selectedArticleCell = sender as? ArticleTableViewCell {
+                let indexPath = tableView.indexPathForCell(selectedArticleCell)!
+                let selectedArticle = articles[indexPath.row]
+                articleDetailViewController.article = selectedArticle
 
+            }
+        }
+    }
+    
+    
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue){
+        if let sourceViewController = sender.sourceViewController as?
+            ArticleViewController, article = sourceViewController.article{
+            
+            // add newly summarized article
+            let newIndexPath = NSIndexPath(forRow: articles.count, inSection: 0)
+            articles.append(article)
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+        }
+        // Save the articles.
+        //saveArticles()
+    }
+    
+    // MARK: NSCoding
+//    func saveArticles() {
+//        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(articles, toFile: Article.ArchiveURL.path!)
+//        if !isSuccessfulSave {
+//        print("Failed to save article...")
+//        }
+//    }
+ //
+//    func loadArticles() -> [Article]? {
+//    return NSKeyedUnarchiver.unarchiveObjectWithFile(Article.ArchiveURL.path!) as? [Article]
+//    }
+    
 }

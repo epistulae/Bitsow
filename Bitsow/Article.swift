@@ -16,11 +16,11 @@ class Article{
     var title: String
     var date: String
     var author: String
-    var summary: [String]!
+    var summary: String!
     var text: String!
     
     // MARK: Initializers
-    init?(url: String, title: String, date: String, author: String?, summary: [String], text: String) {
+    init?(url: String, title: String, date: String, author: String?, summary: String, text: String) {
         // Initialize stored properties.
         self.url = url
         self.title = title

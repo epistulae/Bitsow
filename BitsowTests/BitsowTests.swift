@@ -16,15 +16,11 @@ class BitsowTests: XCTestCase {
     // Test initializations of class Article
     func testArticleInitialization() {
         let title = "14 People Die As Bus Carrying University Exchange Students Crashes In Spain"
-        var summary = [String]()
+        var summary = "Some summary"
         let author = "Alicia Melville-Smith"
         let date = "some date"
        
-        summary.append("S1")
-        summary.append("S2")
-        summary.append("S3")
-        summary.append("S4")
-        summary.append("S5")
+
         
         let text = "TEXT"
         let url = "https://"

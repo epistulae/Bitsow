@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController {
+class ArticleViewController: UIViewController, UINavigationControllerDelegate {
     
     
     // MARK: Properties
@@ -17,22 +17,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var artAuthor: UILabel!
     @IBOutlet weak var datePub: UILabel!
-    @IBOutlet weak var summaryTable: UITableView!
     @IBOutlet weak var altsum: UILabel!
+    @IBOutlet weak var saveArticle: UIBarButtonItem!
+    var mainText = ""
     
-    var articleURL: String!
+    var articleurl: String!
     let extensionName = "group.com.bitsow"
     let key = "url"
-    //var summaryArray = [String]()
-        
+
+    var article: Article?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // API Call
-        getArticle()
+        checkAlreadySaved()
         
-        //self.summaryTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "sumCell")
+        // Self refer to url
+        
+        // Set up view if contains saved Article
+        if let article = article {
+            articleTitle.text  = article.title
+            artAuthor.text = article.author
+            datePub.text = article.date
+            altsum.text = article.summary
+        } else{
+            
+        // API Call for unsaved article
+        getArticle()
+            
+        }
         
         
         //        if let saved = NSUserDefaults(suiteName: extensionName){
@@ -53,23 +66,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Tableview functions
-    
-//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.summaryArray.count;
-//    }
-//    
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        var cell:UITableViewCell = self.summaryTable.dequeueReusableCellWithIdentifier("sumCell")! as UITableViewCell
-//        
-//        cell.textLabel?.text = self.summaryArray[indexPath.row]
-//        print(self.summaryArray[indexPath.row])
-//        return cell
-//    }
-//    
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        print("You selected cell #\(indexPath.row)!")
-//    }
+    func checkAlreadySaved(){
+        // If article is not yet saved, the button is enabled
+        let title = self.articleTitle.text ?? ""
+        saveArticle.enabled = !title.isEmpty
+    }
     
     // MARK: API Calls
     var originalURL = "http://www.cnn.com/2016/03/24/politics/isis-plots-europe-planned-brussels-cell/index.html"
@@ -78,7 +79,6 @@ class ViewController: UIViewController {
     
     
     let endPoint: String = "https://api.aylien.com/api/v1"
-    var mainText = ""
     
     // Fix illegal URLs
     func fixURL(url: String) ->String {
@@ -200,7 +200,7 @@ class ViewController: UIViewController {
         request.addValue("\(apiKey)", forHTTPHeaderField: "X-AYLIEN-TextAPI-Application-Key")
         request.addValue("\(appID)", forHTTPHeaderField: "X-AYLIEN-TextAPI-Application-ID")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("5", forHTTPHeaderField: "sentences_number")
+        request.addValue("9", forHTTPHeaderField: "sentences_number")
         
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: config)
@@ -272,6 +272,37 @@ class ViewController: UIViewController {
     }
     
     
+    
+    // MARK: Navigation
+    
+    @IBAction func cancelButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+
+    }
+    
+    
+    // This method lets you configure a view controller before it's presented.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if saveArticle === sender {
+        
+        let url = originalURL
+        let title = articleTitle.text
+        let author = artAuthor.text ?? ""
+        let date = datePub.text
+        let summary = altsum.text
+        let text = mainText
+        
+        // Set the meal to be passed to MealTableViewController after the unwind
+        article = Article(url: url, title: title!, date: date!, author: author, summary: summary!, text:text)
+
+    }
+    
+    
+
+    
+    func cancel(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     
     
@@ -394,12 +425,7 @@ class ViewController: UIViewController {
     //        task.resume()
     //    }
     
-    
-    
-    
-    
-    
-    // MARK: Actions
+    }
     
 }
 

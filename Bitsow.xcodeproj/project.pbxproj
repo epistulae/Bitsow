@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC606C401CA873F4000C7B11 /* SavedArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC606C3F1CA873F4000C7B11 /* SavedArticleViewController.swift */; };
 		DC8E3FAF1CA1BCC90023A21B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E3FAE1CA1BCC90023A21B /* AppDelegate.swift */; };
-		DC8E3FB11CA1BCC90023A21B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E3FB01CA1BCC90023A21B /* ViewController.swift */; };
+		DC8E3FB11CA1BCC90023A21B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E3FB01CA1BCC90023A21B /* ArticleViewController.swift */; };
 		DC8E3FB41CA1BCC90023A21B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC8E3FB21CA1BCC90023A21B /* Main.storyboard */; };
 		DC8E3FB61CA1BCC90023A21B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC8E3FB51CA1BCC90023A21B /* Assets.xcassets */; };
 		DC8E3FC41CA1BCC90023A21B /* BitsowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E3FC31CA1BCC90023A21B /* BitsowTests.swift */; };
@@ -54,9 +55,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC606C3F1CA873F4000C7B11 /* SavedArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedArticleViewController.swift; sourceTree = "<group>"; };
 		DC8E3FAB1CA1BCC90023A21B /* Bitsow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bitsow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC8E3FAE1CA1BCC90023A21B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC8E3FB01CA1BCC90023A21B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DC8E3FB01CA1BCC90023A21B /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		DC8E3FB31CA1BCC90023A21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC8E3FB51CA1BCC90023A21B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC8E3FBA1CA1BCC90023A21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,10 +129,11 @@
 				DC8E3FEB1CA69F6E0023A21B /* Bitsow.entitlements */,
 				DC8E3FCE1CA1C44D0023A21B /* Article.swift */,
 				DC8E3FAE1CA1BCC90023A21B /* AppDelegate.swift */,
-				DC8E3FB01CA1BCC90023A21B /* ViewController.swift */,
+				DC8E3FB01CA1BCC90023A21B /* ArticleViewController.swift */,
+				DC606C3F1CA873F4000C7B11 /* SavedArticleViewController.swift */,
 				DC8E3FB21CA1BCC90023A21B /* Main.storyboard */,
-				DC8E401C1CA7BF260023A21B /* ArticleTableViewCell.swift */,
 				DC8E3FD61CA5DC8C0023A21B /* ArticleTableViewController.swift */,
+				DC8E401C1CA7BF260023A21B /* ArticleTableViewCell.swift */,
 				DC8E3FB51CA1BCC90023A21B /* Assets.xcassets */,
 				DC8E40161CA73AFF0023A21B /* Launch Screen.storyboard */,
 				DC8E3FBA1CA1BCC90023A21B /* Info.plist */,
@@ -307,8 +310,9 @@
 			files = (
 				DC8E401D1CA7BF260023A21B /* ArticleTableViewCell.swift in Sources */,
 				DC8E3FD71CA5DC8C0023A21B /* ArticleTableViewController.swift in Sources */,
-				DC8E3FB11CA1BCC90023A21B /* ViewController.swift in Sources */,
+				DC8E3FB11CA1BCC90023A21B /* ArticleViewController.swift in Sources */,
 				DC8E3FAF1CA1BCC90023A21B /* AppDelegate.swift in Sources */,
+				DC606C401CA873F4000C7B11 /* SavedArticleViewController.swift in Sources */,
 				DC8E3FCF1CA1C44D0023A21B /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
