@@ -42,7 +42,8 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
             getArticle()
         }
             
-        
+        // Save button disabled until url is imputted
+        checkUrl()
         
         
         //        if let saved = NSUserDefaults(suiteName: extensionName){
@@ -82,6 +83,16 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
         getArticle()
     }
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        // Disable the Save button while editing.
+        saveArticle.enabled = false
+    }
+    
+    func checkUrl() {
+        // Disable the Save button if the text field is empty.
+        let text = originalURL ?? ""
+        saveArticle.enabled = !text.isEmpty
+    }
     
     // MARK: API Calls
     let endPoint: String = "https://api.aylien.com/api/v1"
@@ -271,6 +282,7 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
             summary.appendContentsOf("\u{2022} \(line)\n")
         }
         self.altsum.text = summary
+        saveArticle.enabled = true
     }
     
     func updateMainText(text: String) {
