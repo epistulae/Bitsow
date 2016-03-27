@@ -11,15 +11,15 @@
 		DC8E3FB11CA1BCC90023A21B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E3FB01CA1BCC90023A21B /* ViewController.swift */; };
 		DC8E3FB41CA1BCC90023A21B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC8E3FB21CA1BCC90023A21B /* Main.storyboard */; };
 		DC8E3FB61CA1BCC90023A21B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC8E3FB51CA1BCC90023A21B /* Assets.xcassets */; };
-		DC8E3FB91CA1BCC90023A21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC8E3FB71CA1BCC90023A21B /* LaunchScreen.storyboard */; };
 		DC8E3FC41CA1BCC90023A21B /* BitsowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E3FC31CA1BCC90023A21B /* BitsowTests.swift */; };
 		DC8E3FCF1CA1C44D0023A21B /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E3FCE1CA1C44D0023A21B /* Article.swift */; };
 		DC8E3FD31CA400630023A21B /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC8E3FD21CA400620023A21B /* Key.plist */; };
-		DC8E3FD51CA5D4EF0023A21B /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E3FD41CA5D4EF0023A21B /* ArticleTableViewCell.swift */; };
 		DC8E3FD71CA5DC8C0023A21B /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E3FD61CA5DC8C0023A21B /* ArticleTableViewController.swift */; };
 		DC8E400A1CA6B6FD0023A21B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E40091CA6B6FD0023A21B /* ShareViewController.swift */; };
 		DC8E400D1CA6B6FD0023A21B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC8E400B1CA6B6FD0023A21B /* MainInterface.storyboard */; };
 		DC8E40111CA6B6FD0023A21B /* BitsowShareEx.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DC8E40071CA6B6FD0023A21B /* BitsowShareEx.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DC8E40171CA73B000023A21B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC8E40161CA73AFF0023A21B /* Launch Screen.storyboard */; };
+		DC8E401D1CA7BF260023A21B /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E401C1CA7BF260023A21B /* ArticleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,14 +59,12 @@
 		DC8E3FB01CA1BCC90023A21B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DC8E3FB31CA1BCC90023A21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC8E3FB51CA1BCC90023A21B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DC8E3FB81CA1BCC90023A21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC8E3FBA1CA1BCC90023A21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC8E3FBF1CA1BCC90023A21B /* BitsowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitsowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC8E3FC31CA1BCC90023A21B /* BitsowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitsowTests.swift; sourceTree = "<group>"; };
 		DC8E3FC51CA1BCC90023A21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC8E3FCE1CA1C44D0023A21B /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		DC8E3FD21CA400620023A21B /* Key.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
-		DC8E3FD41CA5D4EF0023A21B /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		DC8E3FD61CA5DC8C0023A21B /* ArticleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
 		DC8E3FEB1CA69F6E0023A21B /* Bitsow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Bitsow.entitlements; sourceTree = "<group>"; };
 		DC8E40071CA6B6FD0023A21B /* BitsowShareEx.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BitsowShareEx.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +72,8 @@
 		DC8E400C1CA6B6FD0023A21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		DC8E400E1CA6B6FD0023A21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC8E40151CA6B7050023A21B /* BitsowShareEx.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BitsowShareEx.entitlements; sourceTree = "<group>"; };
+		DC8E40161CA73AFF0023A21B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		DC8E401C1CA7BF260023A21B /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,10 +129,10 @@
 				DC8E3FAE1CA1BCC90023A21B /* AppDelegate.swift */,
 				DC8E3FB01CA1BCC90023A21B /* ViewController.swift */,
 				DC8E3FB21CA1BCC90023A21B /* Main.storyboard */,
+				DC8E401C1CA7BF260023A21B /* ArticleTableViewCell.swift */,
 				DC8E3FD61CA5DC8C0023A21B /* ArticleTableViewController.swift */,
-				DC8E3FD41CA5D4EF0023A21B /* ArticleTableViewCell.swift */,
 				DC8E3FB51CA1BCC90023A21B /* Assets.xcassets */,
-				DC8E3FB71CA1BCC90023A21B /* LaunchScreen.storyboard */,
+				DC8E40161CA73AFF0023A21B /* Launch Screen.storyboard */,
 				DC8E3FBA1CA1BCC90023A21B /* Info.plist */,
 				DC8E3FD21CA400620023A21B /* Key.plist */,
 			);
@@ -276,9 +276,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC8E3FB91CA1BCC90023A21B /* LaunchScreen.storyboard in Resources */,
 				DC8E3FD31CA400630023A21B /* Key.plist in Resources */,
 				DC8E3FB61CA1BCC90023A21B /* Assets.xcassets in Resources */,
+				DC8E40171CA73B000023A21B /* Launch Screen.storyboard in Resources */,
 				DC8E3FB41CA1BCC90023A21B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,8 +305,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC8E401D1CA7BF260023A21B /* ArticleTableViewCell.swift in Sources */,
 				DC8E3FD71CA5DC8C0023A21B /* ArticleTableViewController.swift in Sources */,
-				DC8E3FD51CA5D4EF0023A21B /* ArticleTableViewCell.swift in Sources */,
 				DC8E3FB11CA1BCC90023A21B /* ViewController.swift in Sources */,
 				DC8E3FAF1CA1BCC90023A21B /* AppDelegate.swift in Sources */,
 				DC8E3FCF1CA1C44D0023A21B /* Article.swift in Sources */,
@@ -351,14 +351,6 @@
 				DC8E3FB31CA1BCC90023A21B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DC8E3FB71CA1BCC90023A21B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DC8E3FB81CA1BCC90023A21B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		DC8E400B1CA6B6FD0023A21B /* MainInterface.storyboard */ = {
@@ -578,6 +570,7 @@
 				DC8E40141CA6B6FD0023A21B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

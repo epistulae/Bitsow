@@ -12,25 +12,30 @@ class Article{
     
     // MARK: Properties
     
-    var title: String
-    //var date: String/Int not sure how to get yet...
-    var author: String
     var url: String
-    var summary: String!
+    var title: String
+    var date: String
+    var author: String
+    var summary: [String]!
+    var text: String!
     
     // MARK: Initializers
-    init?(title: String, author: String?, summary: String, url: String) {
+    init?(url: String, title: String, date: String, author: String?, summary: [String], text: String) {
         // Initialize stored properties.
+        self.url = url
         self.title = title
+        self.date = date
         self.author = author ?? ""
         self.summary = summary
-        self.url = url
+        self.text = text
         
         
         //super.init() for when I add NSCoding and NSObject
         
         //Initialization fails if summary is empty
-        if summary.isEmpty {
+        if summary.isEmpty || text.isEmpty{
+            // note: even if api does not process, summary and text will still contain error message.
+            // should never be empty
             return nil
         }
     }

@@ -11,7 +11,6 @@ import UIKit
 class ArticleTableViewCell: UITableViewCell {
 
     // MARK: Properties
-    
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var artAuthor: UILabel!
     @IBOutlet weak var datePub: UILabel!
@@ -19,13 +18,11 @@ class ArticleTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }

@@ -10,12 +10,13 @@ import UIKit
 
 class ArticleTableViewController: UITableViewController {
 
+    // MARK: Properties
+    var articles = [Article]()
+     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
+        loadSampleData()
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
@@ -24,28 +25,41 @@ class ArticleTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func loadSampleData(){
+        let article1 = Article(url: "URL1", title: "Title1", date: "2015-10-29", author: "A1Author", summary: ["sum1A1", "sum2A1"], text: "Blahblah Article 1")!
+        let article2 = Article(url: "URL2", title: "Title2", date: "2015-10-29", author: "A2Author", summary: ["sum1A2", "sum2A2"], text: "Blahblah Article 2")!
+        let article3 = Article(url: "URL3", title: "Title3", date: "2015-10-29", author: "A3Author", summary: ["sum1A3", "sum2A3"], text: "Blahblah Article 3")!
+        
+        articles += [article1, article2, article3]
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return articles.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cellIdentifier = "ArticleCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ArticleTableViewCell
 
-        // Configure the cell...
-
+        //Call appropriate article
+        let article = articles[indexPath.row]
+        
+        cell.artAuthor.text = article.author
+        cell.articleTitle.text = article.title
+        cell.datePub.text = article.date
+        
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

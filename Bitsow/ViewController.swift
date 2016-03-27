@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     // MARK: Properties
@@ -17,32 +17,59 @@ class ViewController: UIViewController {
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var artAuthor: UILabel!
     @IBOutlet weak var datePub: UILabel!
-    @IBOutlet weak var artSummary: UILabel!
+    @IBOutlet weak var summaryTable: UITableView!
     
     var articleURL: String!
-    let extensionName = "group.com.Bitsow.swift.shareExtension"
+    let extensionName = "group.com.bitsow"
     let key = "url"
-
+    var summaryArray = [String]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let saved = NSUserDefaults(suiteName: extensionName) {
-            if let urlData = saved.objectForKey(key) as? NSURL {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.articleURL = urlData.absoluteString
-                })
-            }
-        }
-        print(articleURL)
-        
+        summaryArray.append("hello world")
         // API Call
-        //getArticle()
-    }
+        getArticle()
+        print(self.summaryArray)
+
+        self.summaryTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        
+//        if let saved = NSUserDefaults(suiteName: extensionName){
+//            print(saved)
+//            if let urlData = saved.objectForKey(key) as? NSString {
+//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                    self.articleURL = urlData as String
+//                    self.artSummary.text = self.articleURL
+//                })
+//            }
+//        }
+//        print(articleURL)
+        
+}
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Tableview functions
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.summaryArray.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell = self.summaryTable.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        
+        cell.textLabel?.text = self.summaryArray[indexPath.row]
+        print(self.summaryArray[indexPath.row])
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("You selected cell #\(indexPath.row)!")
+    }
     
     // MARK: API Calls
     var originalURL = "http://www.pewinternet.org/2015/10/29/technology-device-ownership-2015/"
@@ -86,7 +113,6 @@ class ViewController: UIViewController {
         let URL = fixURL(originalURL)
         let specificEnd: String = "\(endPoint)/extract?url=\(URL)"
         
-        print(specificEnd)
         guard let url = NSURL(string: specificEnd) else {
             print("Error: cannot create URL")
             return
@@ -163,7 +189,6 @@ class ViewController: UIViewController {
         let URL = fixURL(originalURL)
         let specificEnd: String = "\(endPoint)/summarize?url=\(URL)"
         
-        print(specificEnd)
         guard let url = NSURL(string: specificEnd) else {
             print("Error: cannot create URL")
             return
@@ -194,7 +219,6 @@ class ViewController: UIViewController {
                 print("error calling GET with Alchemy API")
                 return
             }
-            print(responseData)
             
             // Read JSON
             let page: NSDictionary
@@ -206,11 +230,10 @@ class ViewController: UIViewController {
                 return
             }
             
-            // Get title from JSON
+            // Get summary from JSON
             if let summary: NSArray = page["sentences"] as? NSArray {
-                // Update title
-                //self.performSelectorOnMainThread("updateSummary:", withObject: summary, waitUntilDone: false)
-                print(summary)
+                // Update summary
+                self.performSelectorOnMainThread("updateSummary:", withObject: summary, waitUntilDone: false)
             }
             
         })
@@ -236,8 +259,10 @@ class ViewController: UIViewController {
         self.datePub.text = "\(date) | \(time)"
     }
     
-    func updateSummary(text: String) {
-        self.artSummary.text = text
+    func updateSummary(text: [String]) {
+        for line in text{
+            self.summaryArray.append(line)
+        }
     }
     
     func updateMainText(text: String) {
