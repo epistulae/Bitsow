@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     
     
     // MARK: Properties
@@ -18,35 +18,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var artAuthor: UILabel!
     @IBOutlet weak var datePub: UILabel!
     @IBOutlet weak var summaryTable: UITableView!
+    @IBOutlet weak var altsum: UILabel!
     
     var articleURL: String!
     let extensionName = "group.com.bitsow"
     let key = "url"
-    var summaryArray = [String]()
-    
+    //var summaryArray = [String]()
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        summaryArray.append("hello world")
+        
         // API Call
         getArticle()
-        print(self.summaryArray)
-
-        self.summaryTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        //self.summaryTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "sumCell")
         
         
-//        if let saved = NSUserDefaults(suiteName: extensionName){
-//            print(saved)
-//            if let urlData = saved.objectForKey(key) as? NSString {
-//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                    self.articleURL = urlData as String
-//                    self.artSummary.text = self.articleURL
-//                })
-//            }
-//        }
-//        print(articleURL)
+        //        if let saved = NSUserDefaults(suiteName: extensionName){
+        //            print(saved)
+        //            if let urlData = saved.objectForKey(key) as? NSString {
+        //                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        //                    self.articleURL = urlData as String
+        //                    self.artSummary.text = self.articleURL
+        //                })
+        //            }
+        //        }
+        //        print(articleURL)
         
-}
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -55,24 +55,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: Tableview functions
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.summaryArray.count;
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.summaryTable.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        
-        cell.textLabel?.text = self.summaryArray[indexPath.row]
-        print(self.summaryArray[indexPath.row])
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You selected cell #\(indexPath.row)!")
-    }
+//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return self.summaryArray.count;
+//    }
+//    
+//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        var cell:UITableViewCell = self.summaryTable.dequeueReusableCellWithIdentifier("sumCell")! as UITableViewCell
+//        
+//        cell.textLabel?.text = self.summaryArray[indexPath.row]
+//        print(self.summaryArray[indexPath.row])
+//        return cell
+//    }
+//    
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        print("You selected cell #\(indexPath.row)!")
+//    }
     
     // MARK: API Calls
-    var originalURL = "http://www.pewinternet.org/2015/10/29/technology-device-ownership-2015/"
+    var originalURL = "http://www.cnn.com/2016/03/24/politics/isis-plots-europe-planned-brussels-cell/index.html"
     // will be share of action at some point
     
     
@@ -260,9 +260,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func updateSummary(text: [String]) {
+        var summary = ""
         for line in text{
-            self.summaryArray.append(line)
+            summary.appendContentsOf("\u{2022} \(line)\n")
         }
+        self.altsum.text = summary
     }
     
     func updateMainText(text: String) {
