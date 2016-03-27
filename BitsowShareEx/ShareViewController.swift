@@ -13,7 +13,7 @@ import MobileCoreServices
 
 class ShareViewController: SLComposeServiceViewController {
 
-    let extensionName = "group.com.Bitsow.swift.shareExtension"
+    let extensionName = "group.com.bitsow"
     let key = "url"
     
     override func isContentValid() -> Bool {
@@ -40,7 +40,9 @@ class ShareViewController: SLComposeServiceViewController {
                 for attachment in contents {
                     if attachment.hasItemConformingToTypeIdentifier(contentType){
                         attachment.loadItemForTypeIdentifier(contentType, options: nil) { data, error in
-                            let url = data as! NSURL
+                            let URL = data as! NSURL
+                            print(URL)
+                            let url = URL.absoluteString
                             self.saveURL(self.key, url: url)
                         }
                     }
@@ -58,9 +60,11 @@ class ShareViewController: SLComposeServiceViewController {
     }
     
     // Saves an image to user defaults.
-    func saveURL(key: String, url: NSURL) {
+    func saveURL(key: String, url: NSString) {
         if let saved = NSUserDefaults(suiteName: extensionName) {
             saved.setObject(url, forKey: key)
+            saved.synchronize()
+
         }
     }
 
