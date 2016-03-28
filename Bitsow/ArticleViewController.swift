@@ -27,7 +27,7 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
     var articleurl: String!
     let extensionName = "group.com.bitsow"
     let key = "url"
-
+    
     var article: Article?
     var originalURL: String!
     
@@ -41,7 +41,7 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
         if originalURL != nil {
             getArticle()
         }
-            
+        
         // Save button disabled until url is imputted
         checkUrl()
         
@@ -64,11 +64,11 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
         // Dispose of any resources that can be recreated.
     }
     
-//    func checkAlreadySaved(){
-//        // If article is not yet saved, the button is enabled
-//        let title = self.articleTitle.text ?? ""
-//        saveArticle.enabled = !title.isEmpty
-//    }
+    //    func checkAlreadySaved(){
+    //        // If article is not yet saved, the button is enabled
+    //        let title = self.articleTitle.text ?? ""
+    //        saveArticle.enabled = !title.isEmpty
+    //    }
     
     // MARK: UITextFieldDelegate
     
@@ -77,7 +77,7 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
         textField.resignFirstResponder()
         return true
     }
-
+    
     func textFieldDidEndEditing(textField: UITextField) {
         originalURL = enterURL.text
         getArticle()
@@ -155,18 +155,18 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
                 return
             }
             guard error == nil else {
-                print("error calling GET with Alchemy API")
-                return
+                    print("error calling GET with Alchemy API")
+                    return
             }
             
             // Read JSON
             let page: NSDictionary
             do {
                 page = try NSJSONSerialization.JSONObjectWithData(responseData,
-                    options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
             } catch  {
-                print("error trying to convert data to JSON")
-                return
+                    print("error trying to convert data to JSON")
+                    return
             }
             
             // Get and update title
@@ -193,7 +193,7 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
             // Call get summary
             self.getSummary()
             
-        })
+            })
         task.resume()
     }
     
@@ -233,18 +233,18 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
                 return
             }
             guard error == nil else {
-                print("error calling GET with Alchemy API")
-                return
+                    print("error calling GET with Alchemy API")
+                    return
             }
             
             // Read JSON
             let page: NSDictionary
             do {
                 page = try NSJSONSerialization.JSONObjectWithData(responseData,
-                    options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
             } catch  {
-                print("error trying to convert data to JSON")
-                return
+                    print("error trying to convert data to JSON")
+                    return
             }
             
             // Get summary from JSON
@@ -253,7 +253,7 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
                 self.performSelectorOnMainThread("updateSummary:", withObject: summary, waitUntilDone: false)
             }
             
-        })
+            })
         task.resume()
     }
     
@@ -279,7 +279,7 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
     func updateSummary(text: [String]) {
         var summary = ""
         for line in text{
-            summary.appendContentsOf("\u{2022} \(line)\n")
+        summary.appendContentsOf("\u{2022} \(line)\n")
         }
         self.altsum.text = summary
         saveArticle.enabled = true
@@ -295,7 +295,7 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
     
     @IBAction func cancelButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
-
+        
     }
     
     
@@ -312,137 +312,16 @@ class ArticleViewController: UIViewController, UITextFieldDelegate, UINavigation
         
         // Set the meal to be passed to MealTableViewController after the unwind
         article = Article(url: url, title: title!, date: date!, author: author, summary: summary!, text:text)
-
-    }
-    
-    
-
-    
-    func cancel(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    
-    
-    
-    
-    
-    //
-    //
-    //
-    //    let endPointAl: String = "http://gateway-a.watsonplatform.net/"
-    //
-    //    // Get stored api key
-    //    private func getKeyA() ->String{
-    //        var key: String!
-    //        let path = NSBundle.mainBundle().pathForResource("Key", ofType: "plist")
-    //        let dict = NSDictionary(contentsOfFile: path!)
-    //        key = dict!.objectForKey("alchemyApiKey") as! String
-    //        return key
-    //    }
-    //
-    //        // Get article title
-    //        func getTitle(){
-    //            let apiKey = getKeyA()
-    //            let URL = fixURL(originalURL)
-    //
-    //            let specificEnd: String = "\(endPointAl)/calls/url/URLGetTitle?apikey=\(apiKey)&url=\(URL)&outputMode=json"
-    //
-    //            guard let url = NSURL(string: specificEnd) else {
-    //                let errorURL = "Error: cannot create URL"
-    //                print(errorURL)
-    //                return
-    //            }
-    //
-    //            let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-    //            let session = NSURLSession(configuration: config)
-    //
-    //            let task = session.dataTaskWithRequest(NSURLRequest(URL: url), completionHandler: {
-    //                (data, response, error) -> Void in
-    //
-    //                // Catch errors
-    //                guard let responseData = data else {
-    //                    print("Error: did not receive data")
-    //                    return
-    //                }
-    //                guard error == nil else {
-    //                    print("error calling GET with Alchemy API")
-    //                    return
-    //                }
-    //
-    //                print(responseData)
-    //
-    //                // Read JSON
-    //                let page: NSDictionary
-    //                do {
-    //                    page = try NSJSONSerialization.JSONObjectWithData(responseData,
-    //                        options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-    //                } catch  {
-    //                    print("error trying to convert data to JSON")
-    //                    return
-    //                }
-    //
-    //                // Get title from JSON
-    //                if let title = page["title"] as? String {
-    //                    // Update title
-    //                    print(title)
-    //                    self.performSelectorOnMainThread("updateArticleTitle:", withObject: title, waitUntilDone: false)
-    //                }
-    //            })
-    //            task.resume()
-    //        }
-    //
-    
-    //   // Get author
-    //    func getAuthor(){
-    //        let apiKey = getKeyA()
-    //        let URL = fixURL(originalURL)
-    //        print(URL)
-    //
-    //        let specificEnd: String = "http://gateway-a.watsonplatform.net/calls/url/URLGetAuthor?apikey=\(apiKey)&url=\(URL)&outputMode=json"
-    //
-    //        guard let url = NSURL(string: specificEnd) else {
-    //            let errorURL = "Error: cannot create URL"
-    //            print(errorURL)
-    //            return
-    //        }
-    //
-    //        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-    //        let session = NSURLSession(configuration: config)
-    //
-    //        let task = session.dataTaskWithRequest(NSURLRequest(URL: url), completionHandler: {
-    //            (data, response, error) -> Void in
-    //
-    //            // Catch errors
-    //            guard let responseData = data else {
-    //                print("Error: did not receive data")
-    //                return
-    //            }
-    //            guard error == nil else {
-    //                print("error calling GET with Alchemy API")
-    //                return
-    //            }
-    //
-    //
-    //            // Read JSON
-    //            let page: NSDictionary
-    //            do {
-    //                page = try NSJSONSerialization.JSONObjectWithData(responseData,
-    //                    options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-    //            } catch  {
-    //                print("error trying to convert data to JSON")
-    //                return
-    //            }
-    //
-    //            // Get author from JSON
-    //            if let author = page["author"] as? String {
-    //                // Update author
-    //                self.performSelectorOnMainThread("updateAuthor:", withObject: author, waitUntilDone: false)
-    //            }
-    //        })
-    //        task.resume()
-    //    }
-    
+        
+        }
+        
+        
+        
+        
+        func cancel(sender: UIBarButtonItem) {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        
     }
     
 }

@@ -15,7 +15,7 @@ class ArticleTableViewController: UITableViewController {
      
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Edit button
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
